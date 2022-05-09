@@ -20,7 +20,7 @@ set nowritebackup
 set formatoptions-=cro
 set tw=0
 set termguicolors "permitir soporte de colores reales"
-
+set textwidth=80 "asegura que la linea no sea mas larga de 80 caracteres"
 "********************************************
 "             PLUGINS
 "********************************************
@@ -61,8 +61,10 @@ Plug 'christoomey/vim-tmux-navigator' "plugin para cambiar de archivos
 Plug 'mxw/vim-jsx' "sintax de jsx
 Plug 'lervag/vimtex' "latex
 Plug 'fladson/vim-kitty' "kitty terminal sintaxis
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } "es un buscador de archivos etc.
-Plug 'junegunn/fzf.vim'
+Plug 'nvim-lua/plenary.nvim' "funciona con telescope
+Plug 'nvim-telescope/telescope.nvim'   "buscardor de archivos
+"Plug 'junegunn/fzf', { 'do': { -> fzf#install() } } "es un buscador de archivos etc.
+"Plug 'junegunn/fzf.vim'
 Plug 'rodrigore/coc-tailwind-intellisense', {'do': 'npm install'}
 call plug#end()
 
