@@ -13,6 +13,7 @@ lua require('plugins')
 lua require('config.closetag')
 lua require('config.scheme')
 lua require('config.tree')
+lua require('config.telescope')
 " ***************************************
 "               KEYBINDINGS
 " ***************************************
@@ -40,7 +41,11 @@ xnoremap J :move '>+1<CR>gv-gv
 vnoremap <silent><s-TAB> <gv
 vnoremap <silent><TAB> >gv
 
-
+"telescope
+nnoremap <leader>p <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 
 "set runtimepath^=~/.nvim runtimepath+=~/.nvim/after
 "let &packpath=&runtimepath

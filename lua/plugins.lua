@@ -5,9 +5,13 @@ vim.call('plug#begin', '~/.nvim/plugged')
 --RESALTADO DE SINTAXIS
 Plug 'sheerun/vim-polyglot' 
 
+--BUSCADOR DE ARCHIVOS
+Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-telescope/telescope.nvim'
+
 --STATUS BAR
-Plug 'maximbaz/lightline-ale' 
 Plug 'itchyny/lightline.vim'
+Plug 'maximbaz/lightline-ale' 
 
 --TEMAS
 Plug 'morhetz/gruvbox'
