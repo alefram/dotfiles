@@ -19,6 +19,7 @@ Plug 'NLKNguyen/papercolor-theme'
 Plug 'ackyshake/spacegray.vim'
 Plug 'arzg/vim-colors-xcode'
 Plug 'nanotech/jellybeans.vim'
+Plug 'marko-cerovac/material.nvim'
 
 --TREE
 Plug 'scrooloose/nerdtree'
