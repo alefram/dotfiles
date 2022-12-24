@@ -3,29 +3,31 @@ vim.opt.softtabstop = 4
 vim.opt.tabstop = 4
 vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
+vim.opt.smartindent = true
+vim.opt.wrap = false
 
 --Filetypes
-vim.cmd("set encoding=utf-8")
-vim.cmd("set fileencoding=utf-8")
+vim.opt.encoding = 'utf-8'
+vim.opt.fileencoding = 'utf-8'
 
 --Theme
-vim.cmd("set termguicolors") --permitir soporte de colores reales
+vim.opt.wildmode = 'longest:full,full' --complete the longest common match
+vim.opt.termguicolors = true --permitir soporte de colores reales
 vim.cmd("syntax on") 
-vim.cmd("set nowrap")
-vim.cmd("set number") -- agrega los numeros de linea
+vim.opt.number = true -- agrega los numeros de line
+vim.opt.title = true
+vim.opt.splitbelow = true
+vim.opt.splitright = true
+--vim.opt.spell = true -- verifica ortografia
 --vim.cmd("set signcolumn=yes")
 --vim.cmd("set colorcolumn=80")
-
-vim.cmd("set mouse=a") -- permite el uso del mouse
-
-vim.cmd("set ignorecase")
-vim.cmd("set smartcase")
-vim.cmd("set cursorline") 
-vim.cmd("set showmatch") -- show matching
-vim.cmd("set clipboard=unnamedplus")
-vim.cmd("set showcmd")
-vim.cmd("set ruler")
-vim.cmd("set autoindent")
-vim.cmd("set nobackup")
-vim.cmd("set tw=0")
-vim.cmd('let mapleader=" "') --tecla lider
+vim.opt.mouse = 'a' --permitir el uso del mouse
+vim.opt.smartcase = true --case sensitive
+vim.opt.cursorline = true
+vim.opt.showmatch = true --show matching
+vim.opt.clipboard = 'unnamedplus' --use system clipboard
+vim.opt.showcmd = true
+vim.opt.ruler = true
+vim.opt.backup = true --automatically save a backup file
+vim.opt.backupdir:remove('.') -- keep backups out of the current directory
+vim.opt.tw = 0
