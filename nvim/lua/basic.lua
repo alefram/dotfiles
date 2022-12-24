@@ -1,8 +1,8 @@
 -- Identation
-vim.cmd("set softtabstop=4")
-vim.cmd("set tabstop=4")
-vim.cmd("set shiftwidth=4")
-vim.cmd("set expandtab")
+vim.opt.softtabstop = 4
+vim.opt.tabstop = 4
+vim.opt.expandtab = true
+vim.opt.shiftwidth = 4
 
 --Filetypes
 vim.cmd("set encoding=utf-8")
