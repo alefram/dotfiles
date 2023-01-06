@@ -25,7 +25,7 @@ Plug 'marko-cerovac/material.nvim'
 Plug 'scrooloose/nerdtree'
 
 --TIPEO
-Plug 'jiangmiao/auto-pairs'
+--Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag' --te cierra las etiquetas de html jsx etc
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter' --te comenta lineas
@@ -39,7 +39,6 @@ Plug 'yggdroot/indentline' --te muestra la linea de espaciado
 Plug 'easymotion/vim-easymotion' --plugin de encontrar funciones en un archivo
 Plug 'christoomey/vim-tmux-navigator' --plugin para cambiar de archivos
 Plug 'mxw/vim-jsx' --sintax de jsx
-Plug ('rodrigore/coc-tailwind-intellisense', {['do'] = 'npm install'}) -- tailwindcss intelisense
 Plug 'lukas-reineke/indent-blankline.nvim' --indentación
 
 vim.call('plug#end')
