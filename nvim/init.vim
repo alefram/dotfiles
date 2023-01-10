@@ -56,4 +56,7 @@ nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
 " coc extensions
 let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-pyright', 'coc-tsserver', 'coc-css', 'coc-html', 'coc-pairs']
 let g:AutoPairsShortcuts = 1
+let g:lightline = { 'colorscheme': 'moonfly'}
 
+ " scheme cambiar a scheme despues
+ let g:xcodedarkhc_green_comments = 1

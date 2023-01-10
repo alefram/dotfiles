@@ -15,12 +15,9 @@ Plug 'maximbaz/lightline-ale'
 
 --TEMAS
 Plug 'morhetz/gruvbox'
-Plug 'NLKNguyen/papercolor-theme'
-Plug 'ackyshake/spacegray.vim'
 Plug 'arzg/vim-colors-xcode'
-Plug 'nanotech/jellybeans.vim'
 Plug 'marko-cerovac/material.nvim'
-
+Plug 'bluz71/vim-moonfly-colors'
 --TREE
 Plug 'scrooloose/nerdtree'
 
