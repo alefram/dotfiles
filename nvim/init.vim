@@ -39,5 +39,10 @@ let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-pyright', 'coc-tsserv
 let g:AutoPairsShortcuts = 1
 let g:lightline = { 'colorscheme': 'moonfly'}
 
- " scheme cambiar a scheme despues
- let g:xcodedarkhc_green_comments = 1
+"scheme
+augroup vim-colors-xcode
+    autocmd!
+augroup END
+
+autocmd vim-colors-xcode ColorScheme * hi Comment        cterm=italic gui=italic
+autocmd vim-colors-xcode ColorScheme * hi SpecialComment cterm=italic gui=italic

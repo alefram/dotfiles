@@ -15,7 +15,6 @@ Plug 'maximbaz/lightline-ale'
 
 --TEMAS
 Plug 'morhetz/gruvbox'
-Plug 'arzg/vim-colors-xcode'
 Plug 'marko-cerovac/material.nvim'
 Plug 'bluz71/vim-moonfly-colors'
 --TREE
