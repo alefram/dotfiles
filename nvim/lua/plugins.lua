@@ -15,9 +15,9 @@ Plug 'maximbaz/lightline-ale'
 
 --TEMAS
 Plug 'morhetz/gruvbox'
-Plug 'marko-cerovac/material.nvim'
 Plug 'bluz71/vim-moonfly-colors'
 Plug 'EdenEast/nightfox.nvim'
+
 --TREE
 Plug 'scrooloose/nerdtree'
 
@@ -37,5 +37,6 @@ Plug 'easymotion/vim-easymotion' --plugin de encontrar funciones en un archivo
 Plug 'christoomey/vim-tmux-navigator' --plugin para cambiar de archivos
 Plug 'mxw/vim-jsx' --sintax de jsx
 Plug 'lukas-reineke/indent-blankline.nvim' --indentación
+Plug 'karb94/neoscroll.nvim' -- para hacer scroll con el teclado
 
 vim.call('plug#end')

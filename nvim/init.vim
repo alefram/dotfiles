@@ -39,10 +39,5 @@ let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-pyright', 'coc-tsserv
 let g:AutoPairsShortcuts = 1
 let g:lightline = { 'colorscheme': 'moonfly'}
 
-"scheme
-augroup vim-colors-xcode
-    autocmd!
-augroup END
-
-autocmd vim-colors-xcode ColorScheme * hi Comment        cterm=italic gui=italic
-autocmd vim-colors-xcode ColorScheme * hi SpecialComment cterm=italic gui=italic
+" scroll setup
+lua require('neoscroll').setup()
