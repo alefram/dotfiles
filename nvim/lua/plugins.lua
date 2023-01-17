@@ -17,6 +17,7 @@ Plug 'maximbaz/lightline-ale'
 Plug 'morhetz/gruvbox'
 Plug 'marko-cerovac/material.nvim'
 Plug 'bluz71/vim-moonfly-colors'
+Plug 'EdenEast/nightfox.nvim'
 --TREE
 Plug 'scrooloose/nerdtree'
 
