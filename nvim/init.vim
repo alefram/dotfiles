@@ -15,6 +15,7 @@ lua require('config.scheme')
 lua require('config.tree')
 lua require('config.telescope')
 lua require('config.keymaps')
+lua require('config.statusBar')
 " ***************************************
 "               KEYBINDINGS
 " ***************************************

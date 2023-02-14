@@ -1,4 +1,4 @@
-{require('lualine').setup {
+require('lualine').setup {
   options = {
     icons_enabled = true,
     theme = 'auto',
@@ -38,9 +38,3 @@
   inactive_winbar = {},
   extensions = {}
 }
-    "coc.preferences.formatOnSaveFiletypes": ["py", "yaml", "json"],
-    "python.linting.flake8Enabled": true,
-    "python.formatting.provider": "black"
-}
-
-
