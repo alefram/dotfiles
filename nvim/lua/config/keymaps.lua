@@ -20,3 +20,15 @@ vim.keymap.set('n', '<leader>p', builtin.find_files, {})
 vim.keymap.set('n', '<leader>fg', builtin.live_grep, {})
 vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
+
+-- terminal
+vim.keymap.set('n', '<leader>t', ':FloatermToggle<CR>')
+vim.keymap.set('t', '<leader>t', '<C-\\><C-n>:FloatermToggle<CR>')
+
+--git
+vim.keymap.set('n',']h', ':Gitsigns next_hunk<CR>')
+vim.keymap.set('n', '[h', ':Gitsigns prev_hunk<CR>')
+vim.keymap.set('n', 'gs', ':Gitsigns stage_hunk<CR>')
+vim.keymap.set('n', 'gS', 'Gitsigns undo_stage_hunk<CR>')
+vim.keymap.set('n', 'gp', ':Gitsigns preview_hunk<CR>')
+vim.keymap.set('n', 'gb', ':Gitsigns blame_line<CR>')

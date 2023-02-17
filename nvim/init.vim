@@ -16,6 +16,10 @@ lua require('config.tree')
 lua require('config.telescope')
 lua require('config.keymaps')
 lua require('config.statusBar')
+lua require('config.indentation')
+lua require('config.dashboard')
+lua require('config.git')
+lua require('config.terminal')
 " ***************************************
 "               KEYBINDINGS
 " ***************************************
@@ -32,7 +36,6 @@ inoremap <expr> <S-Tab> coc#pum#visible() ? coc#pum#prev(1) : "\<S-Tab>"
 " coc extensions
 let g:coc_global_extensions = ['coc-json', 'coc-git', 'coc-pyright', 'coc-tsserver', 'coc-css', 'coc-html', 'coc-pairs']
 let g:AutoPairsShortcuts = 1
-let g:lightline = { 'colorscheme': 'moonfly'}
 
 " scroll setup
 lua require('neoscroll').setup()

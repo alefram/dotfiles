@@ -10,18 +10,27 @@ Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
 
 --STATUS BAR
---Plug 'itchyny/lightline.vim'
---Plug 'maximbaz/lightline-ale' 
-Plug'nvim-lualine/lualine.nvim'
+Plug'nvim-lualine/lualine.nvim' --barra de abajo
+Plug ('akinsho/bufferline.nvim', { tag= 'v3.*' })
+
+--DASHBOARD
+Plug  'glepnir/dashboard-nvim'
+
+--GIT
+Plug 'lewis6991/gitsigns.nvim'
 
 --TEMAS
 Plug 'morhetz/gruvbox'
 Plug 'bluz71/vim-moonfly-colors'
 Plug 'EdenEast/nightfox.nvim'
 
+--TERMINAL
+Plug 'voldikss/vim-floaterm'
+
 --TREE
 Plug 'scrooloose/nerdtree'
 Plug 'nvim-tree/nvim-web-devicons' --agrega iconos al nerdtree
+
 --TIPEO
 --Plug 'jiangmiao/auto-pairs'
 Plug 'alvan/vim-closetag' --te cierra las etiquetas de html jsx etc

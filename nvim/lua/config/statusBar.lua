@@ -38,3 +38,6 @@ require('lualine').setup {
   inactive_winbar = {},
   extensions = {}
 }
+
+---TAB BAR
+require("bufferline").setup{}

@@ -10,3 +10,5 @@ set.background = 'dark'
 
 --nightfox
 vim.cmd([[colorscheme carbonfox]])
+
+

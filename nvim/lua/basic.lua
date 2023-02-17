@@ -6,7 +6,7 @@ vim.opt.expandtab = true
 vim.opt.shiftwidth = 4
 vim.opt.smartindent = true
 vim.opt.wrap = false
-
+vim.opt.signcolumn = 'yes:1'
 --Filetypes
 
 vim.opt.encoding = 'utf-8'
@@ -34,3 +34,5 @@ vim.opt.ruler = true
 vim.opt.backup = true --automatically save a backup file
 vim.opt.backupdir:remove('.') -- keep backups out of the current directory
 vim.opt.tw = 0
+
+
