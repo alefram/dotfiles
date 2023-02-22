@@ -20,6 +20,7 @@ lua require('config.indentation')
 lua require('config.dashboard')
 lua require('config.git')
 lua require('config.terminal')
+lua require('config.treesitter')
 " ***************************************
 "               KEYBINDINGS
 " ***************************************

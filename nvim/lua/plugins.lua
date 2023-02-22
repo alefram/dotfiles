@@ -36,6 +36,7 @@ Plug 'nvim-tree/nvim-web-devicons' --agrega iconos al nerdtree
 Plug 'alvan/vim-closetag' --te cierra las etiquetas de html jsx etc
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter' --te comenta lineas
+Plug 'JoosepAlviste/nvim-ts-context-commentstring' --para comentar con nvim-treesitter
 
 --AUTOCOMPLETADO
 Plug ('neoclide/coc.nvim', {branch= 'release'})
@@ -48,5 +49,6 @@ Plug 'christoomey/vim-tmux-navigator' --plugin para cambiar de archivos
 Plug 'mxw/vim-jsx' --sintax de jsx
 Plug 'lukas-reineke/indent-blankline.nvim' --indentación
 Plug 'karb94/neoscroll.nvim' -- para hacer scroll con el teclado
+Plug ('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn[':TSUpdate']}) ---mejorar el syntax highlight
 
 vim.call('plug#end')
