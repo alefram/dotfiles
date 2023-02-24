@@ -32,19 +32,22 @@ Plug 'scrooloose/nerdtree'
 Plug 'nvim-tree/nvim-web-devicons' --agrega iconos al nerdtree
 
 --TIPEO
---Plug 'jiangmiao/auto-pairs'
+Plug 'jiangmiao/auto-pairs' --cierra pairs
 Plug 'alvan/vim-closetag' --te cierra las etiquetas de html jsx etc
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter' --te comenta lineas
 Plug 'JoosepAlviste/nvim-ts-context-commentstring' --para comentar con nvim-treesitter
 
 --AUTOCOMPLETADO
-Plug ('neoclide/coc.nvim', {branch= 'release'})
+--Plug ('neoclide/coc.nvim', {branch= 'release'})
+Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason-lspconfig.nvim'
+Plug 'neovim/nvim-lspconfig'
+
 
 --OTRAS WHATEVER
 Plug 'mhinz/vim-signify' --te agrega un mas o menos si se agrego o quito algo de git
 Plug 'yggdroot/indentline' --te muestra la linea de espaciado
-Plug 'easymotion/vim-easymotion' --plugin de encontrar funciones en un archivo
 Plug 'christoomey/vim-tmux-navigator' --plugin para cambiar de archivos
 Plug 'mxw/vim-jsx' --sintax de jsx
 Plug 'lukas-reineke/indent-blankline.nvim' --indentación
