@@ -24,9 +24,6 @@ Plug 'morhetz/gruvbox'
 Plug 'bluz71/vim-moonfly-colors'
 Plug 'EdenEast/nightfox.nvim'
 
---TERMINAL
-Plug 'voldikss/vim-floaterm'
-
 --TREE
 Plug 'scrooloose/nerdtree'
 Plug 'nvim-tree/nvim-web-devicons' --agrega iconos al nerdtree
@@ -39,11 +36,16 @@ Plug 'scrooloose/nerdcommenter' --te comenta lineas
 Plug 'JoosepAlviste/nvim-ts-context-commentstring' --para comentar con nvim-treesitter
 
 --AUTOCOMPLETADO
---Plug ('neoclide/coc.nvim', {branch= 'release'})
-Plug 'williamboman/mason.nvim'
+Plug 'williamboman/mason.nvim' --ayuda para lsp
 Plug 'williamboman/mason-lspconfig.nvim'
-Plug 'neovim/nvim-lspconfig'
-
+Plug 'neovim/nvim-lspconfig' --language server protocol
+Plug 'hrsh7th/cmp-nvim-lsp' --herramienta de autocompletado
+Plug 'hrsh7th/cmp-buffer'
+Plug 'hrsh7th/cmp-path'
+Plug 'hrsh7th/nvim-cmp'
+Plug 'onsails/lspkind-nvim'
+Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
+Plug 'b0o/schemastore.nvim' --JSON schemas
 
 --OTRAS WHATEVER
 Plug 'mhinz/vim-signify' --te agrega un mas o menos si se agrego o quito algo de git

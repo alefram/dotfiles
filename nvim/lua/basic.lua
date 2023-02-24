@@ -15,6 +15,7 @@ vim.opt.fileencoding = 'utf-8'
 --Theme
 
 vim.opt.wildmode = 'longest:full,full' --complete the longest common match
+vim.opt.completeopt = 'menuone,longest,preview'
 vim.opt.termguicolors = true --permitir soporte de colores reales
 vim.cmd("syntax on") 
 vim.opt.number = true -- agrega los numeros de line
