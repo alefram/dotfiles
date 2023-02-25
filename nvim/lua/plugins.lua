@@ -3,7 +3,7 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.nvim/plugged')
 
 --RESALTADO DE SINTAXIS
-Plug 'sheerun/vim-polyglot' 
+Plug 'sheerun/vim-polyglot'
 
 --BUSCADOR DE ARCHIVOS
 Plug 'nvim-lua/plenary.nvim'
@@ -33,7 +33,7 @@ Plug 'jiangmiao/auto-pairs' --cierra pairs
 Plug 'alvan/vim-closetag' --te cierra las etiquetas de html jsx etc
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter' --te comenta lineas
-Plug 'JoosepAlviste/nvim-ts-context-commentstring' --para comentar con nvim-treesitter
+Plug 'JoosepAlviste/nvim-ts-context-commentstring' --para comentar con nvim-treesitter no configurado
 
 --AUTOCOMPLETADO
 Plug 'williamboman/mason.nvim' --ayuda para lsp
@@ -46,6 +46,10 @@ Plug 'hrsh7th/nvim-cmp'
 Plug 'onsails/lspkind-nvim'
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'
 Plug 'b0o/schemastore.nvim' --JSON schemas
+
+--LINTING FORMATTING
+Plug 'jose-elias-alvarez/null-ls.nvim'
+Plug 'jay-babu/mason-null-ls.nvim'
 
 --OTRAS WHATEVER
 Plug 'mhinz/vim-signify' --te agrega un mas o menos si se agrego o quito algo de git
