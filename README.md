@@ -9,7 +9,13 @@ This is my configuration of tools for development that I use.
 
 ## Installation
 
-clone this repo and install with the install instruction file in the root folder.
+Clone this repo and make executable the install file
+
+```bash
+chmod +x install
+```
+
+Then run the install file.
 
 ```bash
 
