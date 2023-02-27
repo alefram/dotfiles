@@ -3,7 +3,7 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.nvim/plugged')
 
 --RESALTADO DE SINTAXIS
-Plug 'sheerun/vim-polyglot'
+Plug ('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn[':TSUpdate']}) ---mejorar el syntax highlight
 
 --BUSCADOR DE ARCHIVOS
 Plug 'nvim-lua/plenary.nvim'
@@ -18,6 +18,7 @@ Plug  'glepnir/dashboard-nvim'
 
 --GIT
 Plug 'lewis6991/gitsigns.nvim'
+Plug 'mhinz/vim-signify' --te agrega un mas o menos si se agrego o quito algo de git
 
 --TEMAS
 Plug 'morhetz/gruvbox'
@@ -34,6 +35,9 @@ Plug 'alvan/vim-closetag' --te cierra las etiquetas de html jsx etc
 Plug 'tpope/vim-surround'
 Plug 'scrooloose/nerdcommenter' --te comenta lineas
 Plug 'JoosepAlviste/nvim-ts-context-commentstring' --para comentar con nvim-treesitter no configurado
+Plug 'lukas-reineke/indent-blankline.nvim' --indentación
+Plug 'christoomey/vim-tmux-navigator' --plugin para cambiar de archivos
+Plug 'karb94/neoscroll.nvim' -- para hacer scroll con el teclado
 
 --AUTOCOMPLETADO
 Plug 'williamboman/mason.nvim' --ayuda para lsp
@@ -51,13 +55,5 @@ Plug 'b0o/schemastore.nvim' --JSON schemas
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jay-babu/mason-null-ls.nvim'
 
---OTRAS WHATEVER
-Plug 'mhinz/vim-signify' --te agrega un mas o menos si se agrego o quito algo de git
-Plug 'yggdroot/indentline' --te muestra la linea de espaciado
-Plug 'christoomey/vim-tmux-navigator' --plugin para cambiar de archivos
-Plug 'mxw/vim-jsx' --sintax de jsx
-Plug 'lukas-reineke/indent-blankline.nvim' --indentación
-Plug 'karb94/neoscroll.nvim' -- para hacer scroll con el teclado
-Plug ('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn[':TSUpdate']}) ---mejorar el syntax highlight
 
 vim.call('plug#end')

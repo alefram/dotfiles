@@ -1,10 +1,9 @@
 local let = vim.g
 
 let.NERDTreeMinimalUI = 1
---let.NERDTreeDirArrows = 1
+let.NERDTreeDirArrows = 1
 let.NERDTreeQuitOnOpen = 1
 let.NERDTreeWinPos = "right"
-
 
 require'nvim-web-devicons'.setup {
  -- your personnal icons can go here (to override)
@@ -18,6 +17,7 @@ require'nvim-web-devicons'.setup {
     name = "Zsh"
   }
  };
+
  -- globally enable different highlight colors per icon (default to true)
  -- if set to false all icons will have the default icon's color
  color_icons = true;
@@ -42,7 +42,7 @@ require'nvim-web-devicons'.setup {
  -- takes effect when `strict` is true
  override_by_extension = {
   ["log"] = {
-    icon = "",
+    icon = "",
     color = "#81e043",
     name = "Log"
   }

@@ -1,6 +1,22 @@
 require("mason").setup()
 require("mason-lspconfig").setup({automatic_installation = true})
 
+--Python
+require('lspconfig').pyright.setup({
+  capabilities = capabilities,
+  cmd = { "pyright-langserver", "--stdio" },
+  filetypes = { "python" },
+  settings = {
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        diagnosticMode = "workspace",
+        useLibraryCodeForTypes = true
+      }
+    }
+  }
+})
+
 --PHP
 require('lspconfig').intelephense.setup({capabilities = capabilities})
 
