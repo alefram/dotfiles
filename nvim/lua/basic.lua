@@ -31,7 +31,7 @@ vim.opt.cursorline = true
 vim.opt.showmatch = true --show matching
 vim.opt.clipboard = 'unnamedplus' --use system clipboard
 vim.opt.showcmd = true
-vim.opt.ruler = true
+vim.opt.ruler = false
 vim.opt.backup = true --automatically save a backup file
 vim.opt.backupdir:remove('.') -- keep backups out of the current directory
 vim.opt.tw = 0

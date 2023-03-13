@@ -4,18 +4,32 @@ require("mason-lspconfig").setup({automatic_installation = true})
 --Python
 require('lspconfig').pyright.setup({
   capabilities = capabilities,
-  cmd = { "pyright-langserver", "--stdio" },
-  filetypes = { "python" },
+  cmd = {"pyright-langserver", "--stdio"},
+  filetypes = {"python"},
   settings = {
-    python = {
-      analysis = {
-        autoSearchPaths = true,
-        diagnosticMode = "workspace",
-        useLibraryCodeForTypes = true
+    {
+  python = {
+    analysis = {
+      autoSearchPaths = true,
+      diagnosticMode = "workspace",
+      useLibraryCodeForTypes = true
+    }
+  }
+}
+  }
+})
+
+--Rust
+require('lspconfig').rust_analyzer.setup{
+  capabilities = capabilities,
+  settings = {
+    ['rust-analyzer'] = {
+      diagnostics = {
+        enable = false;
       }
     }
   }
-})
+}
 
 --PHP
 require('lspconfig').intelephense.setup({capabilities = capabilities})
@@ -23,7 +37,7 @@ require('lspconfig').intelephense.setup({capabilities = capabilities})
 --Vue, Javascript, typescript
 require('lspconfig').volar.setup({
   capabililites = capabilities,
-  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue'}
+  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
 })
 
 -- JSON

@@ -55,5 +55,7 @@ Plug 'b0o/schemastore.nvim' --JSON schemas
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'jay-babu/mason-null-ls.nvim'
 
+--Otras whatever
+Plug ('toppair/peek.nvim', { ['run'] = 'deno task --quiet build:fast'} ) --markdown preview
 
 vim.call('plug#end')

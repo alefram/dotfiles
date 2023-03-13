@@ -24,5 +24,5 @@ lua require('config.git')
 lua require('config.treesitter')
 lua require('config.lspconfig')
 lua require('config.scroll')
-
+lua require('config.markdown')
 
