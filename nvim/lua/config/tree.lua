@@ -4,6 +4,7 @@ let.NERDTreeMinimalUI = 1
 let.NERDTreeDirArrows = 1
 let.NERDTreeQuitOnOpen = 1
 let.NERDTreeWinPos = "right"
+let.NERDTreeShowHidden= 1
 
 require'nvim-web-devicons'.setup {
  -- your personnal icons can go here (to override)
