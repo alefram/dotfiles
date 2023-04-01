@@ -9,9 +9,9 @@ vim.keymap.set('i', 'aa', '<Esc>')
 --toggle tree view
 vim.keymap.set('n', '<Leader>n', ':NERDTreeToggle<Enter>')
 --move code blocks in visual mode == not working
-vim.keymap.set('x', 'K :move', "'<-2<CR>gv-gv") 
-vim.keymap.set('x', 'J :move', "'>+1<CR>gv-gv")
+vim.cmd([[vnoremap K :move '<-2<CR>gv-gv]])
+vim.cmd([[vnoremap J :move '>+1<CR>gv-gv]])
 --mejor identacion
-vim.cmd([[vnoremap <silent><s-TAB> <gv]])
 vim.cmd([[vnoremap <silent><TAB> >gv]])
+vim.cmd([[vnoremap <silent><s-TAB> <gv]])
 

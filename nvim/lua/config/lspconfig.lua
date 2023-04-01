@@ -53,25 +53,7 @@ require('lspconfig').jsonls.setup({
 --Tailwindcss
 require('lspconfig').tailwindcss.setup({capabilities = capabilities})
 
--- null-ls
-require('null-ls').setup({
-  sources = {
-    require('null-ls').builtins.diagnostics.eslint_d.with({
-      condition = function(utils)
-        return utils.root_has_file({ '.eslintrc.js' })
-      end,
-    }),
-    require('null-ls').builtins.diagnostics.trail_space.with({ disabled_filetypes = { 'NvimTree' } }),
-    require('null-ls').builtins.formatting.eslint_d.with({
-      condition = function(utils)
-        return utils.root_has_file({ '.eslintrc.js' })
-      end,
-    }),
-    require('null-ls').builtins.formatting.prettierd,
-  },
-})
 
-require('mason-null-ls').setup({ automatic_installation = true })
 
 --Keymaps
 vim.keymap.set('n', '<Leader>d', '<cmd>lua vim.diagnostic.open_float()<CR>')
@@ -90,4 +72,4 @@ vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSig
 vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint' })
 
 -- Commands
-vim.api.nvim_create_user_command('Format', vim.lsp.buf.formatting, {}) --comando para formatear
+vim.api.nvim_create_user_command('Format', vim.lsp.buf.format, {}) --comando para formatear
