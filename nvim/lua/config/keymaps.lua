@@ -6,8 +6,6 @@ vim.g.maplocalleader = ' '
 vim.keymap.set('n', '<Leader>x', ':xdg-open %<CR><CR>') 
 -- insert mode
 vim.keymap.set('i', 'aa', '<Esc>')
---toggle tree view
-vim.keymap.set('n', '<Leader>n', ':NERDTreeToggle<Enter>')
 --move code blocks in visual mode == not working
 vim.cmd([[vnoremap K :move '<-2<CR>gv-gv]])
 vim.cmd([[vnoremap J :move '>+1<CR>gv-gv]])

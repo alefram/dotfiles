@@ -40,4 +40,4 @@ require('lualine').setup {
 }
 
 ---TAB BAR
-require("bufferline").setup{}
+--require("bufferline").setup{}

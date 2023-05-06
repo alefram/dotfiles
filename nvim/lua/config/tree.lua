@@ -5,8 +5,11 @@ let.NERDTreeDirArrows = 1
 let.NERDTreeQuitOnOpen = 1
 let.NERDTreeWinPos = "right"
 let.NERDTreeShowHidden= 1
+let.NERDTreeAutoDeleteBuffer = 1
+let.NERDTreeDirArrowExpandable="+"
+let.NERDTreeDirArrowCollapsible="~"
 
-require'nvim-web-devicons'.setup {
+require('nvim-web-devicons').setup {
  -- your personnal icons can go here (to override)
  -- you can specify color or cterm_color instead of specifying both of them
  -- DevIcon will be appended to `name`
@@ -49,4 +52,7 @@ require'nvim-web-devicons'.setup {
   }
  };
 }
+
+-- keymaps
+vim.keymap.set('n', '<Leader>n', ':NERDTreeToggle<Enter>')
 
