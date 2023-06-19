@@ -23,4 +23,4 @@ lua require('config.treesitter')
 lua require('config.lspconfig')
 lua require('config.scroll')
 lua require('config.markdown')
-
+lua require('config.assistant')

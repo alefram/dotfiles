@@ -37,7 +37,7 @@ Plug 'christoomey/vim-tmux-navigator' --plugin para cambiar de archivos
 Plug 'karb94/neoscroll.nvim' -- para hacer scroll con el teclado
 
 --AUTOCOMPLETADO
-Plug 'williamboman/mason.nvim' --Portable package manager for Neovim help with lsp, linters and formaters
+Plug ('williamboman/mason.nvim', { ['do'] = ':MasonUpdate' }) --Portable package manager for Neovim help with lsp, linters and formaters
 Plug 'williamboman/mason-lspconfig.nvim' --puente entre mason y lspconfig
 Plug 'neovim/nvim-lspconfig' --language server protocol
 
@@ -51,9 +51,12 @@ Plug 'hrsh7th/cmp-nvim-lsp-signature-help'-- te muestra la explicacion de las fu
 Plug 'b0o/schemastore.nvim' --JSON schemas
 Plug 'onsails/lspkind-nvim' --adds vscode-like pictograms to neovim
 
+--AI assistant
+Plug ('codota/tabnine-nvim', { ['do'] = './dl_binaries.sh' })
+
 --LINTING FORMATTING
 
 --Otras whatever
 Plug ('toppair/peek.nvim', { ['run'] = 'deno task --quiet build:fast'} ) --markdown preview
-
+Plug 'kdheepak/cmp-latex-symbols' --latex symbols
 vim.call('plug#end')

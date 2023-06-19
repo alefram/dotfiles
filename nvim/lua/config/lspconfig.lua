@@ -53,8 +53,6 @@ require('lspconfig').jsonls.setup({
 --Tailwindcss
 require('lspconfig').tailwindcss.setup({capabilities = capabilities})
 
-
-
 --Keymaps
 vim.keymap.set('n', '<Leader>d', '<cmd>lua vim.diagnostic.open_float()<CR>')
 vim.keymap.set('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>')
