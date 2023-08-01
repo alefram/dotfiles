@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 DOTFILES="$( cd -- "$(dirname "$0")" >/dev/null 2>&1 ; pwd -P )"
 
 rm -rf $HOME/.config/kitty

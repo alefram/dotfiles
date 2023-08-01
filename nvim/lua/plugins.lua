@@ -13,9 +13,6 @@ Plug ('nvim-telescope/telescope.nvim', {tag='0.1.1'})
 Plug'nvim-lualine/lualine.nvim' --barra de abajo
 --Plug ('akinsho/bufferline.nvim', { tag= 'v3.*' }) --barra de los archivos abiertos
 
---DASHBOARD
-Plug 'glepnir/dashboard-nvim' --dashboard de inicio de neovim
-
 --GIT
 Plug 'mhinz/vim-signify' --te agrega un mas o menos si se agrego o quito algo de git
 
@@ -25,14 +22,15 @@ Plug 'bluz71/vim-moonfly-colors'
 Plug 'EdenEast/nightfox.nvim'
 
 --TREE
-Plug 'scrooloose/nerdtree' --explorador de archivos
+Plug 'scrooloose/nerdtree' --explorador de archivos sidebar
 Plug 'ryanoasis/vim-devicons' -- iconos para nerdtree
 Plug 'nvim-tree/nvim-web-devicons' --iconos para status bar y telescope
+--Plug 'nvim-tree/nvim-tree.lua'
+
 --TIPEO
 Plug 'jiangmiao/auto-pairs' --cierra pares como [,{
 Plug 'alvan/vim-closetag' --te cierra las etiquetas de html jsx etc
 Plug 'scrooloose/nerdcommenter' --te comenta lineas 
---Plug 'lukas-reineke/indent-blankline.nvim' -- lineas indentación
 Plug 'christoomey/vim-tmux-navigator' --plugin para cambiar de archivos
 Plug 'karb94/neoscroll.nvim' -- para hacer scroll con el teclado
 

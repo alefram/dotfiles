@@ -8,14 +8,14 @@ require('lspconfig').pyright.setup({
   filetypes = {"python"},
   settings = {
     {
-  python = {
-    analysis = {
-      autoSearchPaths = true,
-      diagnosticMode = "workspace",
-      useLibraryCodeForTypes = true
+      python = {
+        analysis = {
+          autoSearchPaths = true,
+          diagnosticMode = "workspace",
+          useLibraryCodeForTypes = true
+        }
+      }
     }
-  }
-}
   }
 })
 
@@ -70,4 +70,4 @@ vim.fn.sign_define('DiagnosticSignInfo', { text = '', texthl = 'DiagnosticSig
 vim.fn.sign_define('DiagnosticSignHint', { text = '', texthl = 'DiagnosticSignHint' })
 
 -- Commands
-vim.api.nvim_create_user_command('Format', vim.lsp.buf.format, {}) --comando para formatear
+--vim.api.nvim_create_user_command('Format', vim.lsp.buf.format, {}) --comando para formatear
