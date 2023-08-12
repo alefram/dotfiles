@@ -10,7 +10,10 @@ lua require('basic')
 
 lua require('plugins')
 
-lua require('config.keymaps')
+" ***************************************
+"               CONFIGURATIONS
+" ***************************************
+
 lua require('config.cmp')
 lua require('config.closetag')
 lua require('config.scheme')
@@ -21,5 +24,6 @@ lua require('config.statusBar')
 lua require('config.treesitter')
 lua require('config.lspconfig')
 lua require('config.scroll')
-"lua require('config.markdown')
+lua require('config.markdown')
 lua require('config.assistant')
+lua require('config.keymaps')

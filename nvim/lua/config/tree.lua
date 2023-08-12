@@ -9,29 +9,6 @@ let.NERDTreeAutoDeleteBuffer = 1
 let.NERDTreeDirArrowExpandable="+"
 let.NERDTreeDirArrowCollapsible="~"
 
- --disable netrw at the very start of your init.lua
---vim.g.loaded_netrw = 1
---vim.g.loaded_netrwPlugin = 1
-
- --set termguicolors to enable highlight groups
---vim.opt.termguicolors = true
---vim.g.nvim_tree_highlight_opened_files = 0
-
- --OR setup with some options
---require("nvim-tree").setup({
-  
-  --sort_by = "case_sensitive",
-  --view = {
-    --width = 30,
-    --side = "right"
-  --},
-  --renderer = {
-    --group_empty = true,
-  --},
-  --filters = {
-    --dotfiles = false,
-  --},
---})
 
 require('nvim-web-devicons').setup {
  -- your personnal icons can go here (to override)
@@ -77,6 +54,4 @@ require('nvim-web-devicons').setup {
  };
 }
 
--- keymaps
---vim.keymap.set('n', '<Leader>n', ':NERDTreeToggle<Enter>')
 
