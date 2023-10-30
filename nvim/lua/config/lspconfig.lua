@@ -47,5 +47,8 @@ require('lspconfig').jsonls.setup({})
 --Tailwindcss
 require('lspconfig').tailwindcss.setup({capabilities = capabilities})
 
+--goland
+require('lspconfig').gopls.setup({})
+
 -- Commands
 --vim.api.nvim_create_user_command('Format', vim.lsp.buf.format, {}) --comando para formatear

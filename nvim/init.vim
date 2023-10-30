@@ -14,6 +14,7 @@ lua require('plugins')
 "               CONFIGURATIONS
 " ***************************************
 
+"lua require('config.git')
 lua require('config.cmp')
 lua require('config.closetag')
 lua require('config.scheme')

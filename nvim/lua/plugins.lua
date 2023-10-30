@@ -20,11 +20,12 @@ Plug 'mhinz/vim-signify' --te agrega un mas o menos si se agrego o quito algo de
 Plug 'morhetz/gruvbox'
 Plug 'bluz71/vim-moonfly-colors'
 Plug 'EdenEast/nightfox.nvim'
+Plug 'projekt0n/github-nvim-theme'
 
 --TREE
 Plug 'scrooloose/nerdtree' --explorador de archivos sidebar
 --Plug 'ryanoasis/vim-devicons' -- iconos para nerdtree
-Plug 'nvim-tree/nvim-web-devicons' --iconos para status bar y telescope
+--Plug 'nvim-tree/nvim-web-devicons' --iconos para status bar y telescope
 
 --TYPING
 Plug 'jiangmiao/auto-pairs' --cierra pares como [,{
