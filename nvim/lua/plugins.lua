@@ -15,7 +15,6 @@ Plug'nvim-lualine/lualine.nvim' --barra de abajo
 
 --GIT
 Plug 'mhinz/vim-signify' --te agrega un mas o menos si se agrego o quito algo de git
-
 --SCHEMES
 Plug 'morhetz/gruvbox'
 Plug 'bluz71/vim-moonfly-colors'
@@ -33,6 +32,7 @@ Plug 'alvan/vim-closetag' --te cierra las etiquetas de html jsx etc
 Plug 'scrooloose/nerdcommenter' --te comenta lineas 
 Plug 'christoomey/vim-tmux-navigator' --plugin para cambiar de archivos
 Plug 'karb94/neoscroll.nvim' -- para hacer scroll con el teclado
+Plug 'tpope/vim-surround' -- para cerrar palabras con pairs
 
 --AUTOCOMPLETE
 Plug ('williamboman/mason.nvim', { ['do'] = ':MasonUpdate' }) --Portable package manager for Neovim help with lsp, linters and formaters
@@ -50,7 +50,7 @@ Plug 'b0o/schemastore.nvim' --JSON schemas
 Plug 'onsails/lspkind-nvim' --adds vscode-like pictograms to neovim
 
 --AI ASSISTANT
-Plug ('codota/tabnine-nvim', { ['do'] = './dl_binaries.sh' })
+--Plug ('codota/tabnine-nvim', { ['do'] = './dl_binaries.sh' })
 
 --ANOTHERS
 Plug ('toppair/peek.nvim', { ['run'] = 'deno task --quiet build:fast'} ) --markdown preview

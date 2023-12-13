@@ -9,9 +9,10 @@ set.background = 'dark'
 --vim.cmd([[colorscheme gruvbox]])
 
 --nightfox
-vim.cmd([[colorscheme carbonfox]])
+--vim.cmd([[colorscheme carbonfox]])
 --vim.cmd([[colorscheme nightfox]])
 --vim.cmd([[colorscheme nordfox]])
 
 --github
---vim.cmd([[colorscheme github_dark_dimmed]])
+vim.cmd([[colorscheme github_dark_dimmed]])
+
