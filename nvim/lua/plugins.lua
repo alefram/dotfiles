@@ -7,7 +7,7 @@ Plug ('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn[':TSUpdate']}) ---impr
 
 --FILE SEARCH
 Plug 'nvim-lua/plenary.nvim'--telescope
-Plug ('nvim-telescope/telescope.nvim', {tag='0.1.1'})
+Plug ('nvim-telescope/telescope.nvim', {tag='0.1.5'})
 
 --STATUS BAR
 Plug'nvim-lualine/lualine.nvim' --barra de abajo
