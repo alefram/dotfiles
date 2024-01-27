@@ -1,7 +1,9 @@
 require("mason").setup()
 require("mason-lspconfig").setup({automatic_installation = false})
 
---Python
+local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+--python
 require('lspconfig').pyright.setup({
   capabilities = capabilities,
   cmd = {"pyright-langserver", "--stdio"},
@@ -19,9 +21,21 @@ require('lspconfig').pyright.setup({
   }
 })
 
+--Lua
+require('lspconfig').lua_ls.setup({
+    capabilities = capabilities,
+    settings = {
+        Lua = {
+            runtime = {
+                version = 'LuaJIT'
+            },
+            diagnostics = { globals = {'vim'} }
+        }
+    }
+})
+
 --Rust
 require('lspconfig').rust_analyzer.setup{
-  capabilities = capabilities,
   settings = {
     ['rust-analyzer'] = {
       diagnostics = {
@@ -32,12 +46,11 @@ require('lspconfig').rust_analyzer.setup{
 }
 
 --PHP
-require('lspconfig').intelephense.setup({capabilities = capabilities})
+require('lspconfig').intelephense.setup({})
 --require('lspconfig').phpactor.setup({})
 
 --Vue, Javascript, typescript
 require('lspconfig').volar.setup({
-  capabililites = capabilities,
   filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
 })
 
@@ -45,10 +58,21 @@ require('lspconfig').volar.setup({
 require('lspconfig').jsonls.setup({})
 
 --Tailwindcss
-require('lspconfig').tailwindcss.setup({capabilities = capabilities})
+require('lspconfig').tailwindcss.setup({})
 
 --goland
-require('lspconfig').gopls.setup({})
+require('lspconfig').gopls.setup({
+    capabilities = capabilities,
+    settings = {
+        gopls = {
+            completeUnimported = true,
+            usePlaceholders = true,
+            analyses = {
+                unusedparams = true,
+            }
+        }
+    }
+})
 
--- Commands
---vim.api.nvim_create_user_command('Format', vim.lsp.buf.format, {}) --comando para formatear
+---- Commands
+----vim.api.nvim_create_user_command('Format', vim.lsp.buf.format, {}) --comando para formatear

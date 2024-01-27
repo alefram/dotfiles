@@ -45,6 +45,9 @@ Plug 'hrsh7th/cmp-path' --de cmp
 Plug 'hrsh7th/cmp-cmdline' -- de cmp
 Plug 'hrsh7th/nvim-cmp' -- autocompletado
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'-- te muestra la explicacion de las funciones
+Plug ('L3MON4D3/LuaSnip', {tag = 'v2.*', ['do'] = 'make install_jsregexp'}) --Replace <CurrentMajor> by the latest released major (first number of latest release)
+Plug 'saadparwaiz1/cmp_luasnip'
+
 
 Plug 'b0o/schemastore.nvim' --JSON schemas
 Plug 'onsails/lspkind-nvim' --adds vscode-like pictograms to neovim
