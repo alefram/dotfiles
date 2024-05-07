@@ -20,15 +20,13 @@ require('nvim-treesitter.configs').setup{
         "vim",
         "tsx"
     },
+    sync_install = false,
+    highlight={
+        enable=true,
+        additional_vim_regex_highlighting = false,
+    },
 
-  ignore_install = {"t32"},
-
-  highlight={
-    enable=true,
-    additional_vim_regex_highlighting = false,
-  },
-
-  context_commentstring = {
-    enable = true,
-  },
+    context_commentstring = {
+        enable = true,
+    },
 }
