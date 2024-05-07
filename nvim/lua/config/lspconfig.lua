@@ -3,6 +3,9 @@ require("mason-lspconfig").setup({automatic_installation = false})
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+--C++
+require('lspconfig').clangd.setup({})
+
 --python
 require('lspconfig').pyright.setup({
   capabilities = capabilities,

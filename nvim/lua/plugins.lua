@@ -15,16 +15,13 @@ Plug'nvim-lualine/lualine.nvim' --barra de abajo
 
 --GIT
 Plug 'mhinz/vim-signify' --te agrega un mas o menos si se agrego o quito algo de git
+
 --SCHEMES
-Plug 'morhetz/gruvbox'
-Plug 'bluz71/vim-moonfly-colors'
 Plug 'EdenEast/nightfox.nvim'
 Plug 'projekt0n/github-nvim-theme'
 
 --TREE
 Plug 'scrooloose/nerdtree' --explorador de archivos sidebar
---Plug 'ryanoasis/vim-devicons' -- iconos para nerdtree
---Plug 'nvim-tree/nvim-web-devicons' --iconos para status bar y telescope
 
 --TYPING
 Plug 'jiangmiao/auto-pairs' --cierra pares como [,{
@@ -32,7 +29,7 @@ Plug 'alvan/vim-closetag' --te cierra las etiquetas de html jsx etc
 Plug 'scrooloose/nerdcommenter' --te comenta lineas 
 Plug 'christoomey/vim-tmux-navigator' --plugin para cambiar de archivos
 Plug 'karb94/neoscroll.nvim' -- para hacer scroll con el teclado
-Plug 'tpope/vim-surround' -- para cerrar palabras con pairs
+Plug 'tpope/vim-surround' -- para cerrar palabras con pairs como ""
 
 --AUTOCOMPLETE
 Plug ('williamboman/mason.nvim', { ['do'] = ':MasonUpdate' }) --Portable package manager for Neovim help with lsp, linters and formaters
@@ -56,7 +53,6 @@ Plug 'onsails/lspkind-nvim' --adds vscode-like pictograms to neovim
 --Plug ('codota/tabnine-nvim', { ['do'] = './dl_binaries.sh' })
 
 --ANOTHERS
-Plug ('toppair/peek.nvim', { ['run'] = 'deno task --quiet build:fast'} ) --markdown preview
 Plug 'kdheepak/cmp-latex-symbols' --latex symbols
 
 vim.call('plug#end')

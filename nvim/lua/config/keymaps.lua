@@ -3,7 +3,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 -- open the current file in the default program
-vim.keymap.set('n', '<Leader>x', ':xdg-open %<CR><CR>') 
+vim.keymap.set('n', '<Leader>x', ':xdg-open %<CR><CR>')
 
 -- insert mode
 vim.keymap.set('i', 'aa', '<Esc>')

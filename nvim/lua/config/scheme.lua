@@ -1,20 +1,21 @@
-local set = vim.o
+function ColorMyPencil(color)
+    color = color or "carbonfox"
 
-set.background = 'dark'
+    vim.cmd.colorscheme(color)
 
--- moonfly
---vim.cmd[[colorscheme moonfly]]
+    vim.api.nvim_set_hl(0, "Normal", { bg =  "none" })
+    vim.api.nvim_set_hl(0, "Normalfloat", { bg = "none" })
+    vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+    --vim.api.nvim_set_hl(0, "SignColumn", { bg = "none" })
+    --vim.api.nvim_set_hl(0, "VertSplit", { bg = "none" })
+end
 
---gruvbox
---vim.cmd([[colorscheme gruvbox]])
-
+--options
 --nightfox
-vim.cmd([[colorscheme carbonfox]])
---vim.cmd([[colorscheme nightfox]])
---vim.cmd([[colorscheme nordfox]])
+--nordfox
+--github_dark_dimmed
+--github_light
+--github_light_high_contrast
+--github_dark_default
 
---github
---vim.cmd([[colorscheme github_dark_dimmed]])
---vim.cmd([[colorscheme github_light]])
---vim.cmd([[colorscheme github_light_high_contrast]])
---vim.cmd([[colorscheme github_dark_default]])
+ColorMyPencil("nightfox")

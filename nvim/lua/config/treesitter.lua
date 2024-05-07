@@ -18,6 +18,7 @@ require('nvim-treesitter.configs').setup{
         "bash",
         "lua",
         "vim",
+        "tsx"
     },
 
   ignore_install = {"t32"},
