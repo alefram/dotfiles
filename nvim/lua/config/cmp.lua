@@ -11,12 +11,11 @@ cmp.setup({
         expand = function(args)
           require('luasnip').lsp_expand(args.body)
         end
-
     },
   formatting = {
     format = lspkind.cmp_format(),
   },
-  mapping = {
+  mapping = cmp.mapping.preset.insert({
     ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
@@ -34,15 +33,13 @@ cmp.setup({
       end
     end, { "i", "s" }),
     ['<CR>'] = cmp.mapping.confirm({ select = true }),
-  },
-  sources = {
+  }),
+  sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'nvim_lsp_signature_help' },
+    { name = 'luasnip',  option = { show_autosnippets = true } },
+  }, {
     { name = 'buffer' },
     { name = 'path' },
-    { name = 'luasnip' },
-  },
-  experimental = {
-    ghost_text = true,
-  },
+  })
 })

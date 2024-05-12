@@ -1,6 +1,5 @@
 function ColorMyPencil(color)
-    color = color or "carbonfox"
-
+    color = color or "github_dark_dimmed"
     vim.cmd.colorscheme(color)
 
     vim.api.nvim_set_hl(0, "Normal", { bg =  "none" })
@@ -18,4 +17,4 @@ end
 --github_light_high_contrast
 --github_dark_default
 
-ColorMyPencil("nightfox")
+ColorMyPencil()

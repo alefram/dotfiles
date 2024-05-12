@@ -1,7 +1,27 @@
-require("mason").setup()
-require("mason-lspconfig").setup({automatic_installation = false})
-
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
+
+require("mason").setup()
+require("mason-lspconfig").setup({
+    ensure_installed = {
+        "cmake",
+        "clangd",
+        "pyright",
+        "intelephense",
+        "tsserver",
+        "lua_ls",
+        "rust_analyzer",
+        "gopls",
+        "jsonls",
+        "tailwindcss",
+        "vuels",
+    },
+    automatic_installation = false,
+    handlers = {
+        function(server_name)
+            require('lspconfig')[server_name].setup({})
+        end,
+    },
+})
 
 --C++
 require('lspconfig').clangd.setup({})
@@ -50,15 +70,16 @@ require('lspconfig').rust_analyzer.setup{
 
 --PHP
 require('lspconfig').intelephense.setup({})
---require('lspconfig').phpactor.setup({})
-
---Vue, Javascript, typescript
-require('lspconfig').volar.setup({
-  filetypes = {'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json'}
-})
 
 -- JSON
-require('lspconfig').jsonls.setup({})
+require('lspconfig').jsonls.setup {
+  settings = {
+    json = {
+      schemas = require('schemastore').json.schemas(),
+      validate = { enable = true },
+    },
+  },
+}
 
 --Tailwindcss
 require('lspconfig').tailwindcss.setup({})
@@ -76,6 +97,3 @@ require('lspconfig').gopls.setup({
         }
     }
 })
-
----- Commands
-----vim.api.nvim_create_user_command('Format', vim.lsp.buf.format, {}) --comando para formatear

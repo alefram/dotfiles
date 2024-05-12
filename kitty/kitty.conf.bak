@@ -2284,6 +2284,6 @@ linux_display_server X11
 
 
 # BEGIN_KITTY_THEME
-# Atom
+# 3024 Night
 include current-theme.conf
 # END_KITTY_THEME

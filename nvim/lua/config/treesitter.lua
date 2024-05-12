@@ -6,7 +6,6 @@ require('nvim-treesitter.configs').setup{
         "python",
         "vue",
         "go",
-        "latex",
         "json",
         "javascript",
         "typescript",
@@ -18,15 +17,20 @@ require('nvim-treesitter.configs').setup{
         "bash",
         "lua",
         "vim",
-        "tsx"
+        "comment",
+        "cmake",
+        "tsx",
     },
+    auto_install = true,
     sync_install = false,
-    highlight={
+    highlight = {
         enable=true,
         additional_vim_regex_highlighting = false,
     },
-
     context_commentstring = {
         enable = true,
     },
+    indent = {
+        enable = true
+    }
 }
