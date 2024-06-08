@@ -10,6 +10,8 @@ function ColorMyPencil(color)
 end
 
 --options
+--github_dark_colorblind
+--github_dark_tritanopia
 --nightfox
 --nordfox
 --github_dark_dimmed

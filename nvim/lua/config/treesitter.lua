@@ -3,6 +3,7 @@ require('nvim-treesitter.configs').setup{
         "c",
         "cpp",
         "php",
+        "phpdoc",
         "python",
         "vue",
         "go",
@@ -25,7 +26,7 @@ require('nvim-treesitter.configs').setup{
     sync_install = false,
     highlight = {
         enable=true,
-        additional_vim_regex_highlighting = false,
+        additional_vim_regex_highlighting = true,
     },
     context_commentstring = {
         enable = true,

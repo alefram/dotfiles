@@ -7,6 +7,7 @@ require("mason-lspconfig").setup({
         "clangd",
         "pyright",
         "intelephense",
+        "phpactor",
         "tsserver",
         "lua_ls",
         "rust_analyzer",
@@ -14,6 +15,7 @@ require("mason-lspconfig").setup({
         "jsonls",
         "tailwindcss",
         "vuels",
+        "html",
     },
     automatic_installation = false,
     handlers = {
@@ -21,6 +23,26 @@ require("mason-lspconfig").setup({
             require('lspconfig')[server_name].setup({})
         end,
     },
+})
+
+-- Add the border on hover and on signature help
+
+
+
+--typescript
+require('lspconfig').tsserver.setup({
+  capabilities = capabilities,
+  settings = {
+    tsserver = {
+      -- Enable HTML autocompletion
+      completion = {
+        enable = true,
+        include = {
+          "html",
+        },
+      },
+    },
+  },
 })
 
 --C++
@@ -68,9 +90,6 @@ require('lspconfig').rust_analyzer.setup{
   }
 }
 
---PHP
-require('lspconfig').intelephense.setup({})
-
 -- JSON
 require('lspconfig').jsonls.setup {
   settings = {
@@ -81,10 +100,8 @@ require('lspconfig').jsonls.setup {
   },
 }
 
---Tailwindcss
-require('lspconfig').tailwindcss.setup({})
 
---goland
+--go
 require('lspconfig').gopls.setup({
     capabilities = capabilities,
     settings = {
@@ -96,4 +113,22 @@ require('lspconfig').gopls.setup({
             }
         }
     }
+})
+
+vim.diagnostic.config({
+  virtual_text = false,
+  signs = true,
+  underline = true,
+  update_in_insert = false,
+  severity_sort = false,
+})
+
+-- You will likely want to reduce updatetime which affects CursorHold
+-- note: this setting is global and should be set only once
+vim.o.updatetime = 250
+vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+  group = vim.api.nvim_create_augroup("float_diagnostic", { clear = true }),
+  callback = function ()
+    vim.diagnostic.open_float(nil, {focus=false})
+  end
 })
