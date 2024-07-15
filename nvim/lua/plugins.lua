@@ -7,7 +7,7 @@ Plug ('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn[':TSUpdate']}) ---impr
 
 --FILE SEARCH
 Plug 'nvim-lua/plenary.nvim'--telescope
-Plug ('nvim-telescope/telescope.nvim', {tag='0.1.6'})
+Plug ('nvim-telescope/telescope.nvim', {tag='0.1.8'})
 
 --STATUS BAR
 Plug'nvim-lualine/lualine.nvim'
@@ -18,28 +18,27 @@ Plug 'mhinz/vim-signify' --visualization of my changes
 --SCHEMES
 Plug 'EdenEast/nightfox.nvim'
 Plug 'projekt0n/github-nvim-theme'
+Plug 'arzg/vim-colors-xcode'
 
 --TREE
 Plug 'scrooloose/nerdtree' --sidebar explorer
 
 --TYPING
 Plug 'jiangmiao/auto-pairs' --close [,{ 
-Plug 'windwp/nvim-ts-autotag' --close tags html, jsx etc
 Plug 'karb94/neoscroll.nvim' -- scrolling with keyboard
 Plug 'numToStr/Comment.nvim' -- comment lines
-Plug 'JoosepAlviste/nvim-ts-context-commentstring' -- comment jsx, tsx etc
 Plug 'christoomey/vim-tmux-navigator' -- for change between splits
 
---LSP, AUTOCOMPLETE, SNIPPETS
+--LSP
 Plug ('williamboman/mason.nvim') --Portable package manager for Neovim help with lsp, linters and formaters
 Plug 'williamboman/mason-lspconfig.nvim' -- mason-lspconfig conection
 Plug 'neovim/nvim-lspconfig' --language server protocol
 
+--AUTOCOMPLETE cmp
 Plug 'hrsh7th/nvim-cmp' -- autocomplete
 Plug 'hrsh7th/cmp-nvim-lsp'-- cmp
 Plug 'hrsh7th/cmp-buffer' -- cmp
 Plug 'hrsh7th/cmp-path' -- cmp
-Plug 'hrsh7th/cmp-cmdline' -- cmp
 
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'-- explanation of functions
 Plug 'onsails/lspkind-nvim' --adds vscode-like pictograms to neovim

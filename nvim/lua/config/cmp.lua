@@ -31,43 +31,42 @@ cmp.setup({
           require('luasnip').lsp_expand(args.body)
         end
     },
-  formatting = {
-    format = lspkind.cmp_format(),
-  },
-  mapping = cmp.mapping.preset.insert({
-    ["<Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_next_item()
-      elseif has_words_before() then
-        cmp.complete()
-      else
-        fallback()
-      end
-    end, { "i", "s" }),
-    ["<S-Tab>"] = cmp.mapping(function(fallback)
-      if cmp.visible() then
-        cmp.select_prev_item()
-      else
-        fallback()
-      end
-    end, { "i", "s" }),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
-  }),
-  sources = cmp.config.sources(preferred_sources),
-  performance = {
-    max_view_entries = 7,
-    fetching_timeout = 1000,
-  },
-  vim.api.nvim_create_autocmd("BufRead", {
-    group = vim.api.nvim_create_augroup("CmpBufferDisableGrp", { clear = true }),
-    callback = function(ev)
-      local sources = preferred_sources
-      if not tooBig(ev.buf) then
-        sources[#sources + 1] = { name = "buffer", keyword_length = 4 }
-      end
-      cmp.setup.buffer({
-        sources = cmp.config.sources(sources),
-      })
-    end,
-  })
+    formatting = {
+        format = lspkind.cmp_format(),
+    },
+    mapping = cmp.mapping.preset.insert({
+        ["<Tab>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.select_next_item()
+          elseif has_words_before() then
+            cmp.complete()
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
+          if cmp.visible() then
+            cmp.select_prev_item()
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    }),
+    sources = cmp.config.sources(preferred_sources),
+    performance = {
+        fetching_timeout = 1000,
+    },
+    vim.api.nvim_create_autocmd("BufRead", {
+        group = vim.api.nvim_create_augroup("CmpBufferDisableGrp", { clear = true }),
+        callback = function(ev)
+          local sources = preferred_sources
+          if not tooBig(ev.buf) then
+            sources[#sources + 1] = { name = "buffer", keyword_length = 4 }
+          end
+          cmp.setup.buffer({
+            sources = cmp.config.sources(sources),
+          })
+        end,
+    })
 })
