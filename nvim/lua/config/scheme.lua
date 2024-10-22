@@ -14,6 +14,7 @@ end
 --github_dark_tritanopia
 --nightfox
 --nordfox
+--carbonfox
 --github_dark_dimmed
 --github_light
 --github_light_high_contrast

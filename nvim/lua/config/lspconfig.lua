@@ -6,11 +6,9 @@ require("mason-lspconfig").setup({
         "cmake",
         "clangd",
         "pyright",
-        "intelephense",
         "phpactor",
         "tsserver",
         "lua_ls",
-        "rust_analyzer",
         "gopls",
         "jsonls",
         "tailwindcss",
@@ -18,20 +16,32 @@ require("mason-lspconfig").setup({
         "html",
     },
     automatic_installation = false,
-    handlers = {
-        function(server_name)
-            require('lspconfig')[server_name].setup({})
-        end,
-    },
+    lazy_load = true,
 })
+
+local on_attach = function(client, bufnr)
+    -- Set up keybindings here
+    local opts = { noremap=true, silent=true }
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+end
 
 -- Add the border on hover and on signature help
 
+--tailwindcss
+require('lspconfig').tailwindcss.setup({
+    on_attach = on_attach,
+})
 
+--phpactor
+require('lspconfig').phpactor.setup({
+    on_attach = on_attach,
+})
 
 --typescript
 require('lspconfig').tsserver.setup({
   capabilities = capabilities,
+  on_attach = on_attach,
   settings = {
     tsserver = {
       -- Enable HTML autocompletion
@@ -46,29 +56,22 @@ require('lspconfig').tsserver.setup({
 })
 
 --C++
-require('lspconfig').clangd.setup({})
+require('lspconfig').clangd.setup({
+    on_attach = on_attach,
+})
 
 --python
 require('lspconfig').pyright.setup({
   capabilities = capabilities,
+  on_attach = on_attach,
   cmd = {"pyright-langserver", "--stdio"},
   filetypes = {"python"},
-  settings = {
-    {
-      python = {
-        analysis = {
-          autoSearchPaths = true,
-          diagnosticMode = "workspace",
-          useLibraryCodeForTypes = true
-        }
-      }
-    }
-  }
 })
 
 --Lua
 require('lspconfig').lua_ls.setup({
     capabilities = capabilities,
+    on_attach = on_attach,
     settings = {
         Lua = {
             runtime = {
@@ -78,17 +81,6 @@ require('lspconfig').lua_ls.setup({
         }
     }
 })
-
---Rust
-require('lspconfig').rust_analyzer.setup{
-  settings = {
-    ['rust-analyzer'] = {
-      diagnostics = {
-        enable = false;
-      }
-    }
-  }
-}
 
 -- JSON
 require('lspconfig').jsonls.setup {
@@ -100,10 +92,10 @@ require('lspconfig').jsonls.setup {
   },
 }
 
-
 --go
 require('lspconfig').gopls.setup({
     capabilities = capabilities,
+    on_attach = on_attach,
     settings = {
         gopls = {
             completeUnimported = true,
@@ -125,7 +117,7 @@ vim.diagnostic.config({
 
 -- You will likely want to reduce updatetime which affects CursorHold
 -- note: this setting is global and should be set only once
-vim.o.updatetime = 250
+vim.o.updatetime = 100
 vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
   group = vim.api.nvim_create_augroup("float_diagnostic", { clear = true }),
   callback = function ()
