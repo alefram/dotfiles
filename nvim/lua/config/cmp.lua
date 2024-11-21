@@ -22,7 +22,7 @@ local preferred_sources = {
     { name = 'nvim_lsp_signature_help' },
     { name = 'luasnip',  option = { show_autosnippets = true } },
     { name = 'path' },
-    { name = 'buffer',  keyword_pattern = '[a-zA-Z_][a-zA-Z_0-9]*', indexing_interval = 1000 },
+    { name = 'buffer', option = { indexing_interval = 1000 } },
 }
 
 cmp.setup({
@@ -55,8 +55,17 @@ cmp.setup({
     }),
     sources = cmp.config.sources(preferred_sources),
     performance = {
-        fetching_timeout = 1000,
+        fetching_timeout = 1,
     },
+    vim.api.nvim_create_autocmd("BufEnter", {
+      callback = function()
+        if vim.fn.line('$') > 1000 then
+          cmp.setup.buffer { enabled = false }
+        else
+          cmp.setup.buffer { enabled = true } -- Enable it again for smaller files
+        end
+      end,
+    }),
     vim.api.nvim_create_autocmd("BufRead", {
         group = vim.api.nvim_create_augroup("CmpBufferDisableGrp", { clear = true }),
         callback = function(ev)

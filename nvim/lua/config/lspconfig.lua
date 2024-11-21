@@ -7,12 +7,10 @@ require("mason-lspconfig").setup({
         "clangd",
         "pyright",
         "phpactor",
-        "tsserver",
+        "ts_ls",
         "lua_ls",
         "gopls",
-        "jsonls",
         "tailwindcss",
-        "vuels",
         "html",
     },
     automatic_installation = false,
@@ -30,16 +28,22 @@ end
 
 --tailwindcss
 require('lspconfig').tailwindcss.setup({
+    capabilities = capabilities,
     on_attach = on_attach,
 })
 
 --phpactor
 require('lspconfig').phpactor.setup({
+    capabilities = capabilities,
     on_attach = on_attach,
+    init_options = {
+        ["language_server_phpstan.enabled"] = false,
+        ["language_server_psalm.enabled"] = false,
+    }
 })
 
 --typescript
-require('lspconfig').tsserver.setup({
+require('lspconfig').ts_ls.setup({
   capabilities = capabilities,
   on_attach = on_attach,
   settings = {
@@ -55,8 +59,15 @@ require('lspconfig').tsserver.setup({
   },
 })
 
+--cmake
+require('lspconfig').cmake.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
+
 --C++
 require('lspconfig').clangd.setup({
+    capabilities = capabilities,
     on_attach = on_attach,
 })
 
@@ -81,16 +92,6 @@ require('lspconfig').lua_ls.setup({
         }
     }
 })
-
--- JSON
-require('lspconfig').jsonls.setup {
-  settings = {
-    json = {
-      schemas = require('schemastore').json.schemas(),
-      validate = { enable = true },
-    },
-  },
-}
 
 --go
 require('lspconfig').gopls.setup({
@@ -117,7 +118,7 @@ vim.diagnostic.config({
 
 -- You will likely want to reduce updatetime which affects CursorHold
 -- note: this setting is global and should be set only once
-vim.o.updatetime = 100
+vim.o.updatetime = 500
 vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
   group = vim.api.nvim_create_augroup("float_diagnostic", { clear = true }),
   callback = function ()

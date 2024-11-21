@@ -22,7 +22,7 @@ require('nvim-treesitter.configs').setup{
         "cmake",
         "tsx",
     },
-    auto_install = true,
+    auto_install = false,
 
     highlight = {
         enable=true,
