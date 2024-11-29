@@ -4,6 +4,7 @@ require('nvim-treesitter.configs').setup{
         "cpp",
         "php",
         "phpdoc",
+        "php_only",
         "python",
         "vue",
         "go",
@@ -30,8 +31,19 @@ require('nvim-treesitter.configs').setup{
     },
     context_commentstring = {
         enable = true,
+        config = {
+            javascriptreact = {
+                style_element = '{/*%s*/}'
+            }
+        }
     },
     indent = {
         enable = true
     }
 }
+
+vim.filetype.add({
+    pattern = {
+        ['.*%.blade%.php'] = 'php',
+    }
+})
