@@ -50,6 +50,7 @@ require('lspconfig').tailwindcss.setup({
 --phpactor
 require('lspconfig').phpactor.setup({
     capabilities = capabilities,
+    filetypes = { 'blade', 'php' },
     on_attach = on_attach,
     root_dir = function(start_path)
         return require('lspconfig.util').root_pattern('composer.json', '.git')(start_path)
