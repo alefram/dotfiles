@@ -1,7 +1,7 @@
 require('telescope').setup{
     defaults = {
         file_ignore_patterns = {"node_modules", "vendor", "venv", "public"},
-        border = false,
+        border = true,
         sorting_strategy = "ascending",
     },
 }

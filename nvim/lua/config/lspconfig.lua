@@ -1,5 +1,15 @@
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
+vim.cmd [[ autocmd BufNewFile,BufRead *.blade.php setlocal filetype=blade ]]
+
+-- Add the border on hover and on signature help
+local on_attach = function(client, bufnr)
+    -- Set up keybindings here
+    local opts = { noremap=true, silent=true }
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+end
+
 require("mason").setup()
 require("mason-lspconfig").setup({
     ensure_installed = {
@@ -14,29 +24,44 @@ require("mason-lspconfig").setup({
         "html",
     },
     automatic_installation = false,
-    lazy_load = true,
 })
-
-local on_attach = function(client, bufnr)
-    -- Set up keybindings here
-    local opts = { noremap=true, silent=true }
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-    vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-end
-
--- Add the border on hover and on signature help
 
 --tailwindcss
 require('lspconfig').tailwindcss.setup({
     capabilities = capabilities,
-    on_attach = on_attach,
+    init_options = {
+        ["language_server.diagnostic_exclude_paths"] = {
+            "node_modules/**/*"  -- Exclude node_modules if present
+        },
+    },
+    on_attach = function (client, bufnr)
+        local opts = { noremap=true, silent=true }
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+        vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+
+        local filetype = vim.api.nvim_buf_get_option(bufnr, 'filetype')
+        if filetype == 'php' then
+            client.stop()  -- Stop tailwindcss LSP for PHP files
+            return
+        end
+    end,
 })
 
 --phpactor
 require('lspconfig').phpactor.setup({
     capabilities = capabilities,
     on_attach = on_attach,
+    root_dir = function(start_path)
+        return require('lspconfig.util').root_pattern('composer.json', '.git')(start_path)
+    end,
     init_options = {
+        ["language_server.diagnostic_exclude_paths"] = {
+            "vendor/**/*",  -- Exclude vendor directory
+            "node_modules/**/*"  -- Exclude node_modules if present
+        },
+        ["language_server.diagnostics_on_update"] = false,
+        ["language_server.diagnostics_on_open"] = false,
+        ["language_server.diagnostics_on_save"] = false,
         ["language_server_phpstan.enabled"] = false,
         ["language_server_psalm.enabled"] = false,
     }
@@ -85,6 +110,7 @@ require('lspconfig').lua_ls.setup({
     on_attach = on_attach,
     settings = {
         Lua = {
+            telemetry = { enable = false },
             runtime = {
                 version = 'LuaJIT'
             },
@@ -108,20 +134,3 @@ require('lspconfig').gopls.setup({
     }
 })
 
-vim.diagnostic.config({
-  virtual_text = false,
-  signs = true,
-  underline = true,
-  update_in_insert = false,
-  severity_sort = false,
-})
-
--- You will likely want to reduce updatetime which affects CursorHold
--- note: this setting is global and should be set only once
-vim.o.updatetime = 500
-vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-  group = vim.api.nvim_create_augroup("float_diagnostic", { clear = true }),
-  callback = function ()
-    vim.diagnostic.open_float(nil, {focus=false})
-  end
-})

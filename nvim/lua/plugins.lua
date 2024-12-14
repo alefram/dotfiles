@@ -25,7 +25,6 @@ Plug 'scrooloose/nerdtree' --sidebar explorer
 
 --TYPING
 Plug 'jiangmiao/auto-pairs' --close [,{ 
-Plug 'karb94/neoscroll.nvim' -- scrolling with keyboard
 Plug 'numToStr/Comment.nvim' -- comment lines
 Plug 'christoomey/vim-tmux-navigator' -- for change between splits
 
@@ -37,14 +36,13 @@ Plug 'neovim/nvim-lspconfig' --language server protocol
 --AUTOCOMPLETE cmp
 Plug 'hrsh7th/nvim-cmp' -- autocomplete
 Plug 'hrsh7th/cmp-nvim-lsp'-- cmp
-Plug 'hrsh7th/cmp-buffer' -- cmp
+Plug 'hrsh7th/cmp-buffer' -- cmp for the current buffer
 Plug 'hrsh7th/cmp-path' -- cmp
-
 Plug 'hrsh7th/cmp-nvim-lsp-signature-help'-- explanation of functions
 Plug 'onsails/lspkind-nvim' --adds vscode-like pictograms to neovim
-
 Plug ('L3MON4D3/LuaSnip', {tag = 'v2.*', ['do'] = 'make install_jsregexp'}) --snippets Replace <CurrentMajor> by the latest released major (first number of latest release)
 Plug 'saadparwaiz1/cmp_luasnip' --cmp
+
 Plug 'b0o/schemastore.nvim' --JSON schemas
 
 vim.call('plug#end')

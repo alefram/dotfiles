@@ -6,26 +6,15 @@ local has_words_before = function()
     return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
 end
 
-local function tooBig(bufnr)
-    local max_filesize = 10 * 1024 -- 100 KB
-    local check_stats = (vim.uv or vim.loop).fs_stat
-    local ok, stats = pcall(check_stats, vim.api.nvim_buf_get_name(bufnr))
-    if ok and stats and stats.size > max_filesize then
-      return true
-    else
-      return false
-    end
-end
-
-local preferred_sources = {
-    { name = 'nvim_lsp' },
-    { name = 'nvim_lsp_signature_help' },
-    { name = 'luasnip',  option = { show_autosnippets = true } },
-    { name = 'path' },
-    { name = 'buffer', option = { indexing_interval = 1000 } },
-}
-
 cmp.setup({
+    sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+        { name = 'path' },
+        { name = 'nvim_lsp_signature_help' },
+        { name = 'luasnip' },
+    }, {
+        { name = 'buffer', keyword_length = 5},
+    }),
     snippet = {
         expand = function(args)
           require('luasnip').lsp_expand(args.body)
@@ -53,29 +42,4 @@ cmp.setup({
         end, { "i", "s" }),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
     }),
-    sources = cmp.config.sources(preferred_sources),
-    performance = {
-        fetching_timeout = 1,
-    },
-    vim.api.nvim_create_autocmd("BufEnter", {
-      callback = function()
-        if vim.fn.line('$') > 1000 then
-          cmp.setup.buffer { enabled = false }
-        else
-          cmp.setup.buffer { enabled = true } -- Enable it again for smaller files
-        end
-      end,
-    }),
-    vim.api.nvim_create_autocmd("BufRead", {
-        group = vim.api.nvim_create_augroup("CmpBufferDisableGrp", { clear = true }),
-        callback = function(ev)
-          local sources = preferred_sources
-          if not tooBig(ev.buf) then
-            sources[#sources + 1] = { name = "buffer", keyword_length = 4 }
-          end
-          cmp.setup.buffer({
-            sources = cmp.config.sources(sources),
-          })
-        end,
-    })
 })

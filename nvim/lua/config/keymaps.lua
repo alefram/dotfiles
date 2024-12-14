@@ -37,6 +37,5 @@ vim.keymap.set('n', '<leader>fb', builtin.buffers, {})
 vim.keymap.set('n', '<leader>fh', builtin.help_tags, {})
 vim.keymap.set("n", "<space>fb", ":Telescope file_browser<CR>") -- abrir el browser
 
-
 -- Tree keymaps
 vim.keymap.set('n', '<Leader>n', ':NERDTreeToggle<Enter>')
