@@ -42,7 +42,9 @@ Plug 'hrsh7th/cmp-nvim-lsp-signature-help'-- explanation of functions
 Plug 'onsails/lspkind-nvim' --adds vscode-like pictograms to neovim
 Plug ('L3MON4D3/LuaSnip', {tag = 'v2.*', ['do'] = 'make install_jsregexp'}) --snippets Replace <CurrentMajor> by the latest released major (first number of latest release)
 Plug 'saadparwaiz1/cmp_luasnip' --cmp
-
 Plug 'b0o/schemastore.nvim' --JSON schemas
+
+--AI
+-- Plug 'supermaven-inc/supermaven-nvim'
 
 vim.call('plug#end')

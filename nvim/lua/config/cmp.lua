@@ -12,6 +12,7 @@ cmp.setup({
         { name = 'path' },
         { name = 'nvim_lsp_signature_help' },
         { name = 'luasnip' },
+        -- { name = 'supermaven' }
     }, {
         { name = 'buffer', keyword_length = 5},
     }),
@@ -21,7 +22,11 @@ cmp.setup({
         end
     },
     formatting = {
-        format = lspkind.cmp_format(),
+        format = lspkind.cmp_format({
+            mode = "symbol",
+            max_width = 50,
+            -- symbol_map = { Supermave = "" }
+        }),
     },
     mapping = cmp.mapping.preset.insert({
         ["<Tab>"] = cmp.mapping(function(fallback)
