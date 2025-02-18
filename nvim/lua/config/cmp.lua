@@ -14,7 +14,7 @@ cmp.setup({
         { name = 'luasnip' },
         -- { name = 'supermaven' }
     }, {
-        { name = 'buffer', keyword_length = 5},
+        { name = 'buffer', keyword_length = 7},
     }),
     snippet = {
         expand = function(args)

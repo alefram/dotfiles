@@ -46,5 +46,6 @@ Plug 'b0o/schemastore.nvim' --JSON schemas
 
 --AI
 -- Plug 'supermaven-inc/supermaven-nvim'
+Plug 'github/copilot.vim'
 
 vim.call('plug#end')

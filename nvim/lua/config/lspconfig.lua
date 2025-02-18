@@ -47,23 +47,26 @@ require('lspconfig').tailwindcss.setup({
     end,
 })
 
+--intelliphense
+require('lspconfig').intelephense.setup({})
+
 --phpactor
 require('lspconfig').phpactor.setup({
     capabilities = capabilities,
     filetypes = { 'blade', 'php' },
     on_attach = on_attach,
     root_dir = function(start_path)
-        return require('lspconfig.util').root_pattern('composer.json', '.git')(start_path)
+        return require('lspconfig.util').root_pattern('.git', 'composer.json')(start_path)
     end,
     init_options = {
         ["language_server.diagnostic_exclude_paths"] = {
             "vendor/**/*",  -- Exclude vendor directory
             "node_modules/**/*"  -- Exclude node_modules if present
         },
-        ["language_server.diagnostics_on_update"] = false,
-        ["language_server.diagnostics_on_open"] = false,
-        ["language_server.diagnostics_on_save"] = false,
-        ["language_server_phpstan.enabled"] = false,
+        ["language_server.diagnostics_on_update"] = true,
+        ["language_server.diagnostics_on_open"] = true,
+        ["language_server.diagnostics_on_save"] = true,
+        ["language_server_phpstan.enabled"] = true,
         ["language_server_psalm.enabled"] = false,
     }
 })
