@@ -11,8 +11,8 @@ vim.opt.wildmode = {'list:longest', 'list:full'} --complete the longest common m
 vim.opt.completeopt = 'menuone,longest,preview' --preview completion in command line
 vim.opt.termguicolors = true -- true color support
 vim.cmd("syntax on") --allow syntax highlight
-vim.opt.number = false -- add numer of lines
-vim.opt.relativenumber = false --relative number 
+vim.opt.number = true -- add numer of lines
+vim.opt.relativenumber = true --relative number 
 
 vim.opt.title = true -- show current file being edited in terminal
 vim.opt.splitbelow = true --split window below of the current window
