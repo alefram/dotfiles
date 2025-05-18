@@ -1,5 +1,5 @@
 function ColorMyPencil(color)
-    color = color or "github_dark_default"
+    color = color or "github_dark_tritanopia"
     vim.cmd.colorscheme(color)
 
  --    vim.api.nvim_set_hl(0, "Normal", { bg =  "none" })

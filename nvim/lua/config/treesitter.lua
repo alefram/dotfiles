@@ -21,6 +21,7 @@ require('nvim-treesitter.configs').setup{
         "comment",
         "cmake",
         "tsx",
+        "xml",
     },
     auto_install = false,
 
@@ -54,5 +55,6 @@ parser_config.blade = {
 vim.filetype.add({
     pattern = {
         ['.*%.blade%.php'] = 'blade',
+        [ '.*%.sdf' ] = 'xml',
     }
 })

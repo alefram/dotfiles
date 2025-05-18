@@ -47,6 +47,12 @@ require('lspconfig').tailwindcss.setup({
     end,
 })
 
+--xml
+require('lspconfig').lemminx.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
+})
+
 --intelliphense
 require('lspconfig').intelephense.setup({})
 
