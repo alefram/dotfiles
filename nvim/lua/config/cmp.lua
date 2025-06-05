@@ -12,8 +12,8 @@ cmp.setup({
         { name = 'path' },
         { name = 'nvim_lsp_signature_help' },
         { name = 'luasnip' },
+        -- { name = 'codeium' },
         { name = 'copilot' }
-        -- { name = 'supermaven' }
     }, {
         { name = 'buffer', keyword_length = 7},
     }),
@@ -26,7 +26,7 @@ cmp.setup({
         format = lspkind.cmp_format({
             mode = "symbol",
             max_width = 50,
-            -- symbol_map = { Supermave = "" }
+            symbol_map = { Codeium = "🤖", },
         }),
     },
     mapping = cmp.mapping.preset.insert({

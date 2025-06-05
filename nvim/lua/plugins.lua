@@ -45,7 +45,7 @@ Plug 'saadparwaiz1/cmp_luasnip' --cmp
 Plug 'b0o/schemastore.nvim' --JSON schemas
 
 --AI
--- Plug 'github/copilot.vim'
-Plug 'Exafunction/codeium.vim'
+Plug 'github/copilot.vim'
+-- Plug 'Exafunction/windsurf.vim'
 
 vim.call('plug#end')
