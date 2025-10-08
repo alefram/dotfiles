@@ -13,7 +13,8 @@ Plug ('nvim-telescope/telescope.nvim', {branch='0.1.x'})
 Plug'nvim-lualine/lualine.nvim'
 
 --GIT
-Plug 'mhinz/vim-signify' --visualization of my changes
+-- Plug 'mhinz/vim-signify' --visualization of my changes
+Plug 'lewis6991/gitsigns.nvim' --git integration for buffers
 
 --SCHEMES
 Plug 'EdenEast/nightfox.nvim'
@@ -46,6 +47,5 @@ Plug 'b0o/schemastore.nvim' --JSON schemas
 
 --AI
 Plug 'github/copilot.vim'
--- Plug 'Exafunction/windsurf.vim'
 
 vim.call('plug#end')

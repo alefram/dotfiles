@@ -19,7 +19,6 @@ require("mason-lspconfig").setup({
         "phpactor",
         "ts_ls",
         "lua_ls",
-        "gopls",
         "tailwindcss",
         "html",
     },
@@ -130,17 +129,17 @@ require('lspconfig').lua_ls.setup({
 })
 
 --go
-require('lspconfig').gopls.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-    settings = {
-        gopls = {
-            completeUnimported = true,
-            usePlaceholders = true,
-            analyses = {
-                unusedparams = true,
-            }
-        }
-    }
-})
+-- require('lspconfig').gopls.setup({
+--     capabilities = capabilities,
+--     on_attach = on_attach,
+--     settings = {
+--         gopls = {
+--             completeUnimported = true,
+--             usePlaceholders = true,
+--             analyses = {
+--                 unusedparams = true,
+--             }
+--         }
+--     }
+-- })
 

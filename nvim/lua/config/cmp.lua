@@ -12,7 +12,6 @@ cmp.setup({
         { name = 'path' },
         { name = 'nvim_lsp_signature_help' },
         { name = 'luasnip' },
-        -- { name = 'codeium' },
         { name = 'copilot' }
     }, {
         { name = 'buffer', keyword_length = 7},
