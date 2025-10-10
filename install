@@ -9,3 +9,6 @@ ln -s $DOTFILES/nvim $HOME/.config/nvim
 
 rm -f $HOME/.tmux.conf
 ln -s $DOTFILES/tmux.conf $HOME/.tmux.conf
+
+rm -f $HOME/.delta.gitconfig
+ln -s $DOTFILES/delta.gitconfig $HOME/.delta.gitconfig

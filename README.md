@@ -5,6 +5,8 @@ This is my configuration of tools for development that I use.
 
 - Neovim.
 - Kitty terminal.
+- Delta (diff viewer).
+- Tmux.
 
 ## Installation
 
