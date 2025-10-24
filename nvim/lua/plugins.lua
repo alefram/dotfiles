@@ -48,4 +48,7 @@ Plug 'b0o/schemastore.nvim' --JSON schemas
 --AI
 Plug 'github/copilot.vim'
 
+--markdown
+Plug ('iamcco/markdown-preview.nvim', {['do'] = 'cd app && npm install', ['for'] = 'markdown'})
+
 vim.call('plug#end')

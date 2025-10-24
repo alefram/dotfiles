@@ -8,3 +8,4 @@ let.NERDTreeShowHidden= 1
 let.NERDTreeAutoDeleteBuffer = 1
 let.NERDTreeDirArrowExpandable="+"
 let.NERDTreeDirArrowCollapsible="~"
+let.NERDTreeWinSize=60
