@@ -1,7 +1,7 @@
-vim.opt.softtabstop = 4 --tab of 4 spaces
-vim.opt.tabstop = 4 -- tab of 4
+vim.opt.softtabstop = 2 --tab of 4 spaces
+vim.opt.tabstop = 2 -- tab of 4
 vim.opt.expandtab = true -- use space instead of tab
-vim.opt.shiftwidth = 4  --indent size
+vim.opt.shiftwidth = 2  --indent size
 
 vim.opt.smartindent = true -- automatic insert extra level of indentation e.g if
 vim.opt.wrap = false -- no wrap
@@ -27,4 +27,8 @@ vim.opt.showmatch = true --show matching parenthesis, brackets etc
 vim.opt.clipboard = 'unnamedplus' --use system clipboard
 vim.opt.showcmd = true --show history
 vim.opt.ruler = true
-
+vim.opt.listchars = {
+   tab = '» ',
+   nbsp = '␣',
+   trail = '·', -- Esto mostrará un punto en los espacios al final de la línea
+}

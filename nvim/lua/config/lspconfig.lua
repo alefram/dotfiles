@@ -16,6 +16,7 @@ require("mason-lspconfig").setup({
         "cmake",
         "clangd",
         "pyright",
+        "ruff",
         "phpactor",
         "ts_ls",
         "lua_ls",
@@ -23,6 +24,12 @@ require("mason-lspconfig").setup({
         "html",
     },
     automatic_installation = false,
+})
+
+-- ruff para ver whitespaces
+require('lspconfig').ruff.setup({
+    capabilities = capabilities,
+    on_attach = on_attach,
 })
 
 --tailwindcss
@@ -103,6 +110,15 @@ require('lspconfig').cmake.setup({
 require('lspconfig').clangd.setup({
     capabilities = capabilities,
     on_attach = on_attach,
+    cmd = {
+        "clangd",
+        "--background-index",
+        "--all-scopes-completion",
+        "--completion-style=detailed",
+        "--header-insertion=never",
+        "--header-insertion-decorators",
+        "--pch-storage=memory",
+    },
 })
 
 --python

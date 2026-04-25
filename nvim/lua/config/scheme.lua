@@ -12,7 +12,7 @@ local color_schemes = {
 }
 
 -- Selecciona aquí el esquema de color que prefieras
-local selected_scheme = "nightfox" -- Cambia este valor por el nombre del esquema que quieras
+local selected_scheme = 'carbonfox' -- Cambia este valor por el nombre del esquema que quieras
 
 function ColorMyPencil(color)
     color = color or selected_scheme
