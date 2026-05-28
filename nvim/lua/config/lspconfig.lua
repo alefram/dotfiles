@@ -2,9 +2,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 vim.cmd [[ autocmd BufNewFile,BufRead *.blade.php setlocal filetype=blade ]]
 
--- Add the border on hover and on signature help
 local on_attach = function(client, bufnr)
-    -- Set up keybindings here
     local opts = { noremap=true, silent=true }
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
     vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
@@ -17,24 +15,30 @@ require("mason-lspconfig").setup({
         "clangd",
         "pyright",
         "ruff",
-        "phpactor",
         "ts_ls",
         "lua_ls",
         "tailwindcss",
         "html",
+        "lemminx",
+        "yamlls",
+        "dockerls",
+        "docker_compose_language_service",
     },
-    automatic_installation = false,
+    automatic_enable = false,
 })
 
--- ruff para ver whitespaces
-require('lspconfig').ruff.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-})
+local function setup(server, config)
+    vim.lsp.config(server, vim.tbl_deep_extend("force", {
+        capabilities = capabilities,
+        on_attach = on_attach,
+    }, config or {}))
+    vim.lsp.enable(server)
+end
+
+setup("ruff")
 
 --tailwindcss
-require('lspconfig').tailwindcss.setup({
-    capabilities = capabilities,
+setup("tailwindcss", {
     init_options = {
         ["language_server.diagnostic_exclude_paths"] = {
             "node_modules/**/*"  -- Exclude node_modules if present
@@ -45,7 +49,7 @@ require('lspconfig').tailwindcss.setup({
         vim.api.nvim_buf_set_keymap(bufnr, 'n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
         vim.api.nvim_buf_set_keymap(bufnr, 'n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
 
-        local filetype = vim.api.nvim_buf_get_option(bufnr, 'filetype')
+        local filetype = vim.bo[bufnr].filetype
         if filetype == 'php' then
             client.stop()  -- Stop tailwindcss LSP for PHP files
             return
@@ -54,39 +58,10 @@ require('lspconfig').tailwindcss.setup({
 })
 
 --xml
-require('lspconfig').lemminx.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-})
-
---intelliphense
-require('lspconfig').intelephense.setup({})
-
---phpactor
-require('lspconfig').phpactor.setup({
-    capabilities = capabilities,
-    filetypes = { 'blade', 'php' },
-    on_attach = on_attach,
-    root_dir = function(start_path)
-        return require('lspconfig.util').root_pattern('.git', 'composer.json')(start_path)
-    end,
-    init_options = {
-        ["language_server.diagnostic_exclude_paths"] = {
-            "vendor/**/*",  -- Exclude vendor directory
-            "node_modules/**/*"  -- Exclude node_modules if present
-        },
-        ["language_server.diagnostics_on_update"] = true,
-        ["language_server.diagnostics_on_open"] = true,
-        ["language_server.diagnostics_on_save"] = true,
-        ["language_server_phpstan.enabled"] = true,
-        ["language_server_psalm.enabled"] = false,
-    }
-})
+setup("lemminx")
 
 --typescript
-require('lspconfig').ts_ls.setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
+setup("ts_ls", {
   settings = {
     tsserver = {
       -- Enable HTML autocompletion
@@ -101,15 +76,10 @@ require('lspconfig').ts_ls.setup({
 })
 
 --cmake
-require('lspconfig').cmake.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
-})
+setup("cmake")
 
 --C++
-require('lspconfig').clangd.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
+setup("clangd", {
     cmd = {
         "clangd",
         "--background-index",
@@ -122,17 +92,13 @@ require('lspconfig').clangd.setup({
 })
 
 --python
-require('lspconfig').pyright.setup({
-  capabilities = capabilities,
-  on_attach = on_attach,
+setup("pyright", {
   cmd = {"pyright-langserver", "--stdio"},
   filetypes = {"python"},
 })
 
 --Lua
-require('lspconfig').lua_ls.setup({
-    capabilities = capabilities,
-    on_attach = on_attach,
+setup("lua_ls", {
     settings = {
         Lua = {
             telemetry = { enable = false },
@@ -144,18 +110,26 @@ require('lspconfig').lua_ls.setup({
     }
 })
 
---go
--- require('lspconfig').gopls.setup({
---     capabilities = capabilities,
---     on_attach = on_attach,
---     settings = {
---         gopls = {
---             completeUnimported = true,
---             usePlaceholders = true,
---             analyses = {
---                 unusedparams = true,
---             }
---         }
---     }
--- })
+--yaml
+setup("yamlls", {
+  settings = {
+    yaml = {
+      schemaStore = {
+        enable = false,
+        url = "",
+      },
+      schemas = require('schemastore').yaml.schemas(),
+      validate = true,
+      completion = true,
+      hover = true,
+    },
+  },
+})
 
+--html
+setup("html")
+
+--docker
+setup("dockerls")
+
+setup("docker_compose_language_service")

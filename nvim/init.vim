@@ -15,6 +15,7 @@ lua require('plugins')
 " ***************************************
 
 lua require('config.cmp')
+lua require('config.autopairs')
 lua require('config.comment')
 lua require('config.scheme')
 lua require('config.tree')
@@ -23,4 +24,3 @@ lua require('config.statusBar')
 lua require('config.treesitter')
 lua require('config.lspconfig')
 lua require('config.keymaps')
-" lua require('config.ai')

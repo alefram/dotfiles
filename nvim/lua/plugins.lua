@@ -3,11 +3,11 @@ local Plug = vim.fn['plug#']
 vim.call('plug#begin', '~/.nvim/plugged')
 
 -- HIGHLIGHT SYNTAX
-Plug ('nvim-treesitter/nvim-treesitter', {['do'] = vim.fn[':TSUpdate']}) ---improve syntax highlight
+Plug ('nvim-treesitter/nvim-treesitter', {['do'] = ':TSUpdate'}) ---improve syntax highlight
 
 --FILE SEARCH
 Plug 'nvim-lua/plenary.nvim'--telescope
-Plug ('nvim-telescope/telescope.nvim', {branch='0.1.x'})
+Plug 'nvim-telescope/telescope.nvim'
 
 --STATUS BAR
 Plug'nvim-lualine/lualine.nvim'
@@ -25,7 +25,7 @@ Plug 'arzg/vim-colors-xcode'
 Plug 'scrooloose/nerdtree' --sidebar explorer
 
 --TYPING
-Plug 'jiangmiao/auto-pairs' --close [,{ 
+Plug 'windwp/nvim-autopairs' --close [,{ 
 Plug 'numToStr/Comment.nvim' -- comment lines
 Plug 'christoomey/vim-tmux-navigator' -- for change between splits
 
@@ -44,9 +44,6 @@ Plug 'onsails/lspkind-nvim' --adds vscode-like pictograms to neovim
 Plug ('L3MON4D3/LuaSnip', {tag = 'v2.*', ['do'] = 'make install_jsregexp'}) --snippets Replace <CurrentMajor> by the latest released major (first number of latest release)
 Plug 'saadparwaiz1/cmp_luasnip' --cmp
 Plug 'b0o/schemastore.nvim' --JSON schemas
-
---AI
-Plug 'github/copilot.vim'
 
 --markdown
 Plug ('iamcco/markdown-preview.nvim', {['do'] = 'cd app && npm install', ['for'] = 'markdown'})
