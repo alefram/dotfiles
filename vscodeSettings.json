@@ -1,0 +1,92 @@
+{
+    "editor.fontSize": 12,
+    "editor.fontFamily": "Roboto Mono",
+    "editor.fontLigatures": true,
+    "editor.renderWhitespace": "none",
+    "editor.lineNumbers": "on",
+    "editor.rulers": [80],
+    "editor.guides.indentation": false,
+    "editor.hideCursorInOverviewRuler": true,
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden",
+    "editor.lineHeight": 0,
+    "editor.overviewRulerBorder": false,
+    "editor.inlayHints.enabled": "off",
+    "editor.minimap.enabled": false,
+    "terminal.integrated.fontSize": 12,
+    "telemetry.telemetryLevel": "off",
+    "files.autoSave": "onFocusChange",
+    "workbench.editor.showTabs": "single",
+    "workbench.sideBar.location": "right",
+    "workbench.layoutControl.enabled": false,
+
+    "window.menuBarVisibility": "toggle",
+
+
+    // "files.exclude": {
+    //     "**/node_modules/**": true,
+    //     "**/vendor/**":true,
+    //     "**/.github/**":true,
+    // },
+
+    "files.watcherExclude": {
+        "**/vendor/**":true,
+        "**/node_modules/**": true,
+    },
+
+    //vim
+    "vim.leader": "<space>",
+    "vim.smartRelativeLine":true,
+    "vim.useCtrlKeys": true,
+    "vim.insertModeKeyBindings": [
+        {
+            "before": ["a", "a"],
+            "after": ["<Esc>"]
+        }, 
+    ],
+    "vim.normalModeKeyBindings": [
+        {
+            "before": ["<leader>", "p"],
+            "commands": [ "workbench.action.showCommands" ]
+        },
+        // toggle sidebar with leader + control + b
+        {
+            "before": ["<leader>", "<c-b>"],
+            "commands": [ "workbench.action.toggleSidebarVisibility" ]
+        },
+    ],
+    "vim.visualModeKeyBindings": [
+        {
+            "before": [ "<TAB>" ],
+            "commands": [ "editor.action.indentLines" ]
+        },
+        {
+            "before": [ "<s-TAB>" ],
+            "commands": [ "editor.action.outdentLines" ]
+        },
+        {
+            "before": ["<S-K>"],
+            "commands": ["editor.action.moveLinesUpAction"]
+        },
+        {
+            "before": ["<S-J>"],
+            "commands": ["editor.action.moveLinesDownAction"]
+        },
+        {
+            "before": [ "<c-/>"],
+            "commands": [ "editor.action.commentLine" ]
+        },
+    ],
+    "vim.useSystemClipboard": true,
+    "window.customTitleBarVisibility": "auto",
+    "workbench.navigationControl.enabled": false,
+    "window.experimentalControlOverlay": false,
+    "terminal.integrated.tabs.enabled": false,
+    "window.density.editorTabHeight": "compact",
+    "python.createEnvironment.trigger": "off",
+    "workbench.activityBar.location": "top",
+    "update.showReleaseNotes": false,
+    "claudeCode.useTerminal": true,
+    "workbench.startupEditor": "none",
+    "scm.repositories.selectionMode": "single",
+}
