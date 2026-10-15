@@ -81,7 +81,7 @@ setup("cmake")
 --C++
 setup("clangd", {
     cmd = {
-        "clangd",
+        "/usr/bin/clangd-14",
         "--background-index",
         "--all-scopes-completion",
         "--completion-style=detailed",
